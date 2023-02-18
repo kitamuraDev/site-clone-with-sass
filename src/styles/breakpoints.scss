@@ -1,0 +1,18 @@
+$sp: 560px;
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+// 複数のブレークポイントを管理する場合
+// $breakpoints: (
+//   'sp': 'screen and (max-width: 560px)',
+// ) !default;
+
+// @mixin mq($breakpoint) {
+//   @media #{map-get($breakpoints, $breakpoint)} {
+//     @content;
+//   }
+// }

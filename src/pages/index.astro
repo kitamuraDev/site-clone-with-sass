@@ -9,9 +9,10 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style lang="scss">
+  @import '../styles/breakpoints';
   .wrapper {
-    max-width: 960px;
-    width: 100%;
+    width: min(100% - 2rem, 960px);
+    margin-inline: auto;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -21,6 +22,10 @@ import Layout from '../layouts/Layout.astro';
       font-size: 32px;
       font-weight: 700;
       color: #1c1c1c;
+
+      @include sp {
+        color: greenyellow;
+      }
     }
   }
 </style>
