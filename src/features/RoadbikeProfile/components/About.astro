@@ -1,0 +1,69 @@
+<section>
+  <h2 class="section-title">About</h2>
+  <div class="profile">
+    <img src="/RoadbikeProfile/about.jpg" alt="私のプロフィールアイコン" />
+    <div class="profile-text">
+      <h3 class="profile-name">KAKERU MIYAICHI</h3>
+      <p class="profile-description">
+        テキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキスト
+      </p>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: min(100% - 4%, 960px);
+    margin-inline: auto;
+    padding: 0 60px;
+    margin-bottom: 100px;
+
+    @include sp {
+      padding: 0;
+    }
+  }
+
+  .section-title {
+    color: $base-text-color;
+    border-bottom: 1px solid $base-text-color;
+    font-size: 2rem;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include sp {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  }
+
+  .profile-text {
+    max-width: 400px;
+    width: 100%;
+
+    .profile-name {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .profile-description {
+      font-size: 14px;
+    }
+  }
+</style>
