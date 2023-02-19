@@ -1,0 +1,12 @@
+// breakpoint
+$sp: 600px;
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+// color
+$base-text-color: #383e45;
+$nav-text-color: #24292e;

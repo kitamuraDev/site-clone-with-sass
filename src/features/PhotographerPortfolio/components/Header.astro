@@ -1,0 +1,72 @@
+<header>
+  <h1>
+    <a href="#">My Work</a>
+  </h1>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <a href="https://www.instagram.com/">
+          <img src="/PhotographerPortfolio/instagram-icon.svg" alt="インスタグラムのアイコン" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  header {
+    width: min(100% - 4rem, 960px);
+    margin-inline: auto;
+    height: 270px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include sp {
+      flex-direction: column;
+      height: auto;
+      padding: 12px 0;
+    }
+
+    h1 {
+      a {
+        text-decoration: none;
+        color: $nav-text-color;
+        font-size: 28px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+
+    @include sp {
+      gap: 20px;
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: $nav-text-color;
+        font-size: 0.9rem;
+
+        @include sp {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+</style>
