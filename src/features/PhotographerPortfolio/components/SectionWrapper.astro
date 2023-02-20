@@ -1,0 +1,39 @@
+---
+interface Props {
+  id: string;
+  name: string;
+}
+
+const { id, name } = Astro.props;
+---
+
+<section id={id} class="wrapper">
+  <h2 class="section-title">{name}</h2>
+  <slot />
+</section>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  .wrapper {
+    width: min(100% - 4rem, 960px);
+    margin-inline: auto;
+    margin-bottom: 130px;
+    font-size: 0.9rem;
+
+    @include sp {
+      width: min(100% - 3rem, 960px);
+      margin-bottom: 70px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 64px;
+
+      @include sp {
+        margin-bottom: 40px;
+      }
+    }
+  }
+</style>
