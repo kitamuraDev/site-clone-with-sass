@@ -1,0 +1,55 @@
+---
+import SectionWrapper from './SectionWrapper.astro';
+---
+
+<SectionWrapper id="news" name="News">
+  <dl>
+    <dt>2020.XX.XX</dt>
+    <dd>デザイン雑誌「ＸＸＸＸＸＸ Vol.11』に掲載していただきました。</dd>
+    <dt>2020.XX.XX</dt>
+    <dd>ＸＸ月ＸＸ日から写真集「ＸＸＸＸＸＸＸ」の販売を開始します。</dd>
+    <dt>2019.XX.XX</dt>
+    <dd>【イベント開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト</dd>
+    <dt>2019.XX.XX</dt>
+    <dd>デザイン雑誌「ＸＸＸＸＸＸ Vol.10』に掲載していただきました。</dd>
+    <dt>2019.XX.XX</dt>
+    <dd>【個展開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト</dd>
+  </dl>
+</SectionWrapper>
+
+<style lang="scss">
+  @import '../styles/variable';
+  $border-color: #c8c8c8;
+
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid $border-color;
+
+    @include sp {
+      flex-direction: column;
+    }
+
+    dt {
+      width: 20%;
+      padding: 15px;
+      border-bottom: 1px solid $border-color;
+
+      @include sp {
+        width: auto;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+    dd {
+      width: 80%;
+      padding: 15px;
+      border-bottom: 1px solid $border-color;
+
+      @include sp {
+        width: 100%;
+        padding-top: 0;
+      }
+    }
+  }
+</style>
