@@ -1,0 +1,38 @@
+---
+import SectionWrapper from './SectionWrapper.astro';
+---
+
+<SectionWrapper id="works" name="Works">
+  <ul class="images-container">
+    <li><img src="/PhotographerPortfolio/works1.jpg" /></li>
+    <li><img src="/PhotographerPortfolio/works2.jpg" /></li>
+    <li><img src="/PhotographerPortfolio/works3.jpg" /></li>
+    <li><img src="/PhotographerPortfolio/works4.jpg" /></li>
+    <li><img src="/PhotographerPortfolio/works5.jpg" /></li>
+    <li><img src="/PhotographerPortfolio/works6.jpg" /></li>
+  </ul>
+</SectionWrapper>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    @include sp {
+      flex-direction: column;
+    }
+
+    li {
+      width: 31%;
+
+      @include sp {
+        width: 100%;
+      }
+    }
+  }
+</style>
