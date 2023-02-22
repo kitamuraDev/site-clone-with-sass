@@ -1,0 +1,77 @@
+---
+import SectionWrapper from './SectionWrapper.astro';
+---
+
+<SectionWrapper id="contact" name="Contact">
+  <form action="#">
+    <dl>
+      <dt><label for="name">NAME</label></dt>
+      <dd><input type="text" id="name" name="your-name" /></dd>
+      <dt><label for="email">E-mail</label></dt>
+      <dd><input type="email" id="email" name="your-email" /></dd>
+      <dt><label for="message">MESSAGE</label></dt>
+      <dd><textarea id="message" name="your-message"></textarea></dd>
+    </dl>
+
+    <div class="button-wrapper">
+      <button type="submit" class="submit-btn">送信</button>
+    </div>
+  </form>
+</SectionWrapper>
+
+<style lang="scss">
+  @import '../styles/variable';
+  $border-color: #c8c8c8;
+
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    @include sp {
+      flex-direction: column;
+    }
+
+    dt {
+      width: 15%;
+    }
+    dd {
+      width: 85%;
+      margin-bottom: 10px;
+
+      @include sp {
+        width: 100%;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid $border-color;
+        padding: 10px;
+      }
+    }
+  }
+
+  textarea {
+    height: 10rem;
+  }
+
+  .button-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .submit-btn {
+    cursor: pointer;
+    width: 200px;
+    padding: 15px 0;
+    color: white;
+    background-color: #24292e;
+    border: 1px solid #24292e;
+    transition: all 0.3s;
+  }
+  .submit-btn:hover {
+    color: #24292e;
+    background-color: white;
+  }
+</style>
