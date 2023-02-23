@@ -1,0 +1,76 @@
+---
+const pickup1 = '/TrabelBlog/pickup1.jpg';
+const pickup2 = '/TrabelBlog/pickup2.jpg';
+const pickup3 = '/TrabelBlog/pickup3.jpg';
+const imgs = [pickup1, pickup2, pickup3];
+---
+
+<div id="pickup" class="container">
+  {
+    imgs.map((img) => (
+      <article>
+        <img src={img} />
+        <h2>タイトルテキストテキストテキストテキストテキストテキストテキスト</h2>
+        <div class="readmore">
+          <a href="#">READ MORE</a>
+        </div>
+      </article>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  .container {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    padding-top: 150px;
+    margin-bottom: 60px;
+
+    @include sp {
+      flex-direction: column;
+      padding-top: 140px;
+    }
+  }
+
+  article {
+    text-align: center;
+    width: 32%;
+
+    @include sp {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: $base-text-color;
+      font-size: 1rem;
+      margin: 14px 0 12px 0;
+    }
+
+    a {
+      color: $base-text-color;
+      font-size: 12px;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    a::after {
+      content: '';
+      background: $base-text-color;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+    a:hover::after {
+      opacity: 0;
+      transform: translateY(3px);
+    }
+  }
+</style>
