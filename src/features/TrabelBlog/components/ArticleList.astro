@@ -1,0 +1,102 @@
+---
+const img1 = '/TrabelBlog/main1.jpg';
+const img2 = '/TrabelBlog/main2.jpg';
+const img3 = '/TrabelBlog/main3.jpg';
+
+const imgs = [img1, img2, img3];
+---
+
+<main>
+  {
+    imgs.map((img) => (
+      <article>
+        <h2>
+          <a href="#">タイトルテキストテキストテキストテキストテキスト</a>
+        </h2>
+        <div class="meta">
+          <p>2020/01/01</p>
+          <a href="#">カテゴリ1</a>
+        </div>
+        <a href="#">
+          <img src={img} />
+        </a>
+        <p class="article-text">
+          本文テキストテキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        </p>
+        <div class="readmore">
+          <a href="#">READ MORE</a>
+        </div>
+      </article>
+    ))
+  }
+</main>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  main {
+    flex: 1;
+  }
+
+  article {
+    margin-bottom: 80px;
+
+    h2 {
+      margin: 10px 0 15px 0;
+
+      a {
+        color: $base-text-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .article-text {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+  }
+
+  .meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+
+    p {
+      font-size: 14px;
+    }
+
+    a {
+      font-size: 14px;
+      color: $base-text-color;
+      text-decoration: none;
+    }
+  }
+
+  .readmore {
+    text-align: center;
+
+    a {
+      color: $base-text-color;
+      font-size: 12px;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    a::after {
+      content: '';
+      background: $base-text-color;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+    a:hover::after {
+      opacity: 0;
+      transform: translateY(3px);
+    }
+  }
+</style>
