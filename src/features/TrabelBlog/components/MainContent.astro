@@ -1,0 +1,25 @@
+---
+import ArticleList from './ArticleList.astro';
+import Aside from './Aside.astro';
+---
+
+<div class="container">
+  <ArticleList />
+  <Aside />
+</div>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  .container {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    @include sp {
+      flex-direction: column;
+    }
+  }
+</style>
