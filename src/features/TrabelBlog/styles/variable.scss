@@ -1,0 +1,26 @@
+$sp: 767px; // breakpoint
+$max-width-container: 1200px; // maximum width of container
+
+// meida query
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+// container
+@mixin container {
+  width: min(100% - 2rem, $max-width-container);
+  margin-inline: auto;
+}
+
+// Header and Footer of container
+@mixin container-nav {
+  width: 100%;
+  max-width: $max-width-container;
+  margin-inline: auto;
+}
+
+// color
+$base-text-color: #333;
+$nav-text-color: #fff;

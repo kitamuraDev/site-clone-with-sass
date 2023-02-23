@@ -1,0 +1,62 @@
+<header>
+  <h1><a href="#">Trabel Blog</a></h1>
+  <nav>
+    <ul>
+      <li><a href="new">NEW</a></li>
+      <li><a href="column">COLUMN</a></li>
+      <li><a href="series">SERIES</a></li>
+      <li><a href="qa">QA</a></li>
+      <li><a href="contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  header {
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+
+    h1 {
+      @include container-nav;
+
+      padding: 20px 16px;
+      line-height: 0.94;
+    }
+
+    h1 a {
+      text-decoration: none;
+      color: #212121;
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    nav {
+      background-color: $base-text-color;
+
+      @include sp {
+        overflow: scroll;
+      }
+    }
+
+    nav ul {
+      @include container-nav;
+
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      padding-right: 60px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: $nav-text-color;
+      font-size: 14px;
+    }
+  }
+</style>
