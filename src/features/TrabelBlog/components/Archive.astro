@@ -1,0 +1,44 @@
+<section>
+  <h3>Archive</h3>
+  <ul>
+    {
+      Array.from({ length: 15 }, (_) => (
+        <li>
+          <a href="#">XXXX年XX月(XX)</a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  section {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  h3 {
+    color: $base-text-color;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    border-bottom: 1px solid #777;
+
+    li {
+      text-align: left;
+      padding: 20px;
+      border-top: 1px solid #777;
+    }
+
+    li a {
+      color: $base-text-color;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+</style>
