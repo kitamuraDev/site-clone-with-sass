@@ -1,0 +1,24 @@
+---
+import Author from './Author.astro';
+import Ranking from './Ranking.astro';
+import Archive from './Archive.astro';
+---
+
+<aside>
+  <Author />
+  <Ranking />
+  <Archive />
+</aside>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  aside {
+    width: 33%;
+    padding: 20px;
+
+    @include sp {
+      width: 100%;
+    }
+  }
+</style>
