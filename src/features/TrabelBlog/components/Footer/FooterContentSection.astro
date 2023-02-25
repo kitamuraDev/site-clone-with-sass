@@ -1,0 +1,27 @@
+---
+interface Props {
+  sectionHead: string;
+}
+
+const { sectionHead } = Astro.props;
+---
+
+<section>
+  <h3>{sectionHead}</h3>
+  <slot />
+</section>
+
+<style lang="scss">
+  @import '../../styles/variable';
+
+  section {
+    width: 30%;
+  }
+
+  h3 {
+    color: $base-text-color;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+</style>
