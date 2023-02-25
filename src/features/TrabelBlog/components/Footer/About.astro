@@ -1,0 +1,55 @@
+---
+import FooterContentSection from './FooterContentSection.astro';
+---
+
+<FooterContentSection sectionHead="About">
+  <p>
+    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+  </p>
+  <ul>
+    <li><a href="#">プロフィール詳細</a></li>
+    <li><a href="#">お仕事の依頼</a></li>
+    <li><a href="#">お問い合わせ</a></li>
+  </ul>
+</FooterContentSection>
+
+<style lang="scss">
+  @import '../../styles/variable';
+
+  p {
+    color: $base-text-color;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 20px 0;
+
+    li {
+      margin-bottom: 5px;
+
+      a {
+        color: $base-text-color;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        padding-left: 12px;
+      }
+
+      a::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 0 6px 8px;
+        border-color: transparent transparent transparent #333;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -6px;
+      }
+    }
+  }
+</style>
