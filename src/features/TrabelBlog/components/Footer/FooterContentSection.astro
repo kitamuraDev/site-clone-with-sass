@@ -16,6 +16,11 @@ const { sectionHead } = Astro.props;
 
   section {
     width: 30%;
+
+    @include sp {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
 
   h3 {

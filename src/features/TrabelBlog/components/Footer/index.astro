@@ -1,0 +1,41 @@
+---
+import About from './About.astro';
+import Menu from './Menu.astro';
+import TwitterEmbed from './TwitterEmbed.astro';
+---
+
+<footer>
+  <div class="container">
+    <About />
+    <Menu />
+    <TwitterEmbed />
+  </div>
+  <p>© Travel & Blog</p>
+</footer>
+
+<style lang="scss">
+  @import '../../styles/variable';
+
+  footer {
+    background-color: #f7f7f7;
+
+    .container {
+      @include container-nav;
+
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 16px;
+
+      @include sp {
+        flex-direction: column;
+      }
+    }
+
+    p {
+      color: $base-text-color;
+      font-size: 12px;
+      text-align: center;
+      padding: 10px 0;
+    }
+  }
+</style>
