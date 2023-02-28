@@ -1,0 +1,45 @@
+<footer>
+  <nav>
+    <li><a href="#">INSTAGRAM</a></li>
+    <li><a href="#">TWITTER</a></li>
+    <li><a href="#">FACEBOOK</a></li>
+  </nav>
+  <p class="copylight">© Furniture Design</p>
+</footer>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  footer {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include sp {
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      font-size: 12px;
+
+      @include sp {
+        margin-bottom: 5px;
+      }
+
+      li a {
+        text-decoration: none;
+        color: $base-text-color;
+      }
+    }
+
+    p {
+      color: $base-text-color;
+      font-size: 10px;
+    }
+  }
+</style>
