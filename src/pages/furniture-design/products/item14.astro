@@ -1,0 +1,113 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../features/FurnitureDesign/components/Header.astro';
+import Footer from '../../../features/FurnitureDesign/components/Footer.astro';
+---
+
+<Layout title="item14 - Furniture Design">
+  <Header />
+  <main>
+    <div class="container">
+      <h1>プロダクトタイトル</h1>
+      <div class="item-wrapper">
+        <img src="/FurnitureDesign/item14.jpg" width="400px" />
+        <div class="content">
+          <p>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </p>
+          <p>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </p>
+          <p>¥99,999 +tax</p>
+          <dl>
+            <dt>SIZE：</dt>
+            <dd>W999 x D999 x H999</dd>
+            <dt>COLOR：</dt>
+            <dd>テキスト</dd>
+            <dt>MATERIAL：</dt>
+            <dd>テキストテキストテキスト</dd>
+          </dl>
+        </div>
+      </div>
+      <a href="#">Back To Products</a>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style lang="scss">
+  @import '../../../features/FurnitureDesign/styles/variable';
+
+  main {
+    font-size: 14px;
+    font-weight: 400;
+    color: $base-text-color;
+  }
+
+  .container {
+    @include container;
+    padding-top: 120px;
+    padding-bottom: 160px;
+  }
+
+  .container h1 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  .container a {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: $base-text-color;
+    text-decoration: none;
+  }
+
+  .item-wrapper {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    @include sp {
+      flex-direction: column;
+    }
+  }
+
+  .item-wrapper img {
+    @include sp {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  .item-wrapper .content {
+    width: 42%;
+
+    @include sp {
+      width: 100%;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+
+    dt {
+      width: 30%;
+    }
+    dd {
+      width: 70%;
+    }
+  }
+</style>
