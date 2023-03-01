@@ -1,0 +1,55 @@
+---
+import type { Products } from '../products';
+
+interface Props {
+  products: Products;
+}
+
+const { products } = Astro.props;
+---
+
+<ul>
+  {
+    products.map((product) => (
+      <li>
+        <a href={product.url}>
+          <img src={product.imagePath} alt={product.title} />
+          <p>{product.title}</p>
+          <p>{product.price}</p>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  @import '../styles/variable';
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    li {
+      width: 23%;
+      margin-bottom: 40px;
+
+      @include sp {
+        width: 47%;
+      }
+
+      img {
+        margin-bottom: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      p {
+        font-size: 12px;
+        color: $base-text-color;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../features/FurnitureDesign/components/Header.astro';
+import ProductList from '../../../features/FurnitureDesign/components/ProductList.astro';
+import Footer from '../../../features/FurnitureDesign/components/Footer.astro';
+
+import products from '../../../features/FurnitureDesign/products';
+---
+
+<Layout title="product all - Furniture Design">
+  <Header />
+  <main>
+    <div class="container">
+      <h1 class="title">Products</h1>
+      <ProductList products={products} />
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style lang="scss">
+  @import '../../../features/FurnitureDesign/styles/variable';
+
+  .container {
+    @include container;
+
+    padding-top: 120px;
+    padding-bottom: 160px;
+  }
+
+  .title {
+    color: $base-text-color;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+</style>

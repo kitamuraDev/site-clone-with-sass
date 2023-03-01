@@ -1,8 +1,39 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from './components/Header.astro';
+import ProductList from './components/ProductList.astro';
+import Footer from './components/Footer.astro';
+import products from './products';
+
+const filteredProducts = products.filter((_product, index) => index < 8);
 ---
 
 <Layout title="Furniture Design">
   <Header />
+  <main>
+    <div class="container">
+      <ProductList products={filteredProducts} />
+      <a class="view-more" href="/furniture-design/products">View More</a>
+    </div>
+  </main>
+  <Footer />
 </Layout>
+
+<style lang="scss">
+  @import './styles/variable';
+
+  .container {
+    @include container;
+
+    padding-top: 80px;
+    padding-bottom: 160px;
+  }
+
+  .view-more {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: $base-text-color;
+    text-decoration: none;
+  }
+</style>
