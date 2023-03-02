@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../features/FurnitureDesign/components/Header.astro';
+import Footer from '../../features/FurnitureDesign/components/Footer.astro';
+---
+
+<Layout title="about - Furniture Design">
+  <Header />
+  <main>
+    <div class="container">
+      <h1>About</h1>
+      <p>
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      </p>
+      <p>
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style lang="scss">
+  @import '../../features/FurnitureDesign/styles/variable';
+
+  .container {
+    @include container;
+
+    padding-top: 120px;
+    padding-bottom: 160px;
+  }
+
+  .container h1 {
+    color: $base-text-color;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .container p {
+    color: $base-text-color;
+    font-size: 14px;
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+</style>
