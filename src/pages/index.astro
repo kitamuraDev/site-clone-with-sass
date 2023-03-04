@@ -1,30 +1,140 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+type LinkCard = {
+  id: number;
+  imagePath: string;
+  originalUrl: string;
+  cloneUrl: string;
+}[];
+
+const linkCard: LinkCard = [
+  {
+    id: 1,
+    imagePath: '/LinkCard/furniture-design.webp',
+    originalUrl: 'https://code-step.com/demo/html/store2/',
+    cloneUrl: '/furniture-design',
+  },
+  {
+    id: 2,
+    imagePath: '/LinkCard/photographer-portforio.webp',
+    originalUrl: 'https://code-step.com/demo/html/portfolio1/',
+    cloneUrl: '/photographer-portforio',
+  },
+  {
+    id: 3,
+    imagePath: '/LinkCard/roadbike-profile.webp',
+    originalUrl: 'https://code-step.com/demo/html/profile/',
+    cloneUrl: '/roadbike-profile',
+  },
+  {
+    id: 4,
+    imagePath: '/LinkCard/trabel-blog.webp',
+    originalUrl: 'https://code-step.com/demo/html/blog/',
+    cloneUrl: '/trabel-blog',
+  },
+];
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="wrapper">
-    <h1>Welcome to Astro</h1>
+  <div class="container">
+    <ul class="card-wrapper">
+      {
+        linkCard.map((card) => (
+          <li class="card">
+            <img src={card.imagePath} />
+            <ul class="links">
+              <li>
+                <a href={card.originalUrl}>original</a>
+              </li>
+              <li>
+                <a href={card.cloneUrl}>clone</a>
+              </li>
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </Layout>
 
 <style lang="scss">
-  @import '../styles/breakpoints';
-  .wrapper {
+  $breakpoints: 600px;
+  @mixin sp {
+    @media screen and (max-width: ($breakpoints)) {
+      @content;
+    }
+  }
+  @mixin hover {
+    @media (hover: hover) and (pointer: fine) {
+      @content;
+    }
+  }
+
+  .container {
     width: min(100% - 2rem, 960px);
     margin-inline: auto;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      color: #1c1c1c;
+    @include sp {
+      align-items: flex-start;
+    }
+  }
 
-      @include sp {
-        color: greenyellow;
+  .card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .card {
+    width: 48%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f3f3f3ab;
+    transition: all 0.5s ease;
+
+    @include sp {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 60px;
+      border-radius: 4px;
+    }
+
+    .links {
+      padding: 0 20px;
+
+      li {
+        padding: 4px 8px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+      li:first-child {
+        margin-bottom: 8px;
+      }
+
+      @include hover() {
+        li:hover {
+          background-color: #fff;
+          transform: translateY(-4px);
+        }
+      }
+
+      a {
+        display: inline-block;
+        width: 100%;
+        font-size: 14px;
+        color: #333;
+        text-decoration: none;
       }
     }
   }
